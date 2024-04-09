@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Main() {
+function Overview() {
   return (
     <div>
       lorem 5020
@@ -8,4 +8,4 @@ function Main() {
   )
 }
 
-export default Main
+export default Overview

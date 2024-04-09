@@ -1,18 +1,14 @@
+import HomePage from "../src/HomePage/HomePage";
+import Overlay from "../src/Overlay/Overlay";
+import "./App.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import "./App.css";
-import HomePage from "../src/HomePage/HomePage";
-import Saveform from "../src/SaveForm/Saveform";
 import { useState} from "react";
 
 
 function App() {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-
-  const toggleOverlay = () => {
-    setIsOverlayVisible(!isOverlayVisible);
-  };
-
 
   return (
     <>
@@ -28,7 +24,7 @@ function App() {
         >
           Save
         </button>
-      {isOverlayVisible && <Saveform setIsOverlayVisible={setIsOverlayVisible} isOverlayVisible={isOverlayVisible}/>}
+       <Overlay setIsOverlayVisible={setIsOverlayVisible} isOverlayVisible={isOverlayVisible}/>
       </div>
       <HomePage />
     </>

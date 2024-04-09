@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import './Saveform.css'; // Import your CSS file for styling
+import Form from '../FormData/Form';
+import './Overlay.css'; 
+
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import Form from '../saveFormDate/Form';
-const Saveform= ({setIsOverlayVisible,isOverlayVisible}) => {
+
+
+
+const Overlay= ({setIsOverlayVisible,isOverlayVisible}) => {
  
   return (
     <div className={`overlay ${isOverlayVisible ? 'visible' : ''}`}>
@@ -12,10 +16,10 @@ const Saveform= ({setIsOverlayVisible,isOverlayVisible}) => {
         <h2 className='font-bold'>Workorder</h2>
         <FontAwesomeIcon  icon={faXmark}  onClick={()=>setIsOverlayVisible(false)} />
         </div>
-       <Form/>
+       <Form setIsOverlayVisible={setIsOverlayVisible} isOverlayVisible={isOverlayVisible}/>
       </div>
     </div>
   );
 };
 
-export default Saveform;
+export default Overlay;

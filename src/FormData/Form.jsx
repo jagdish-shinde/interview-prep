@@ -1,7 +1,8 @@
-import "../saveFormDate/Form.css"
+import "../FormData/Form.css"
+
 import { useState} from "react";
 
-function Form() {
+function Form({setIsOverlayVisible,isOverlayVisible}) {
   const [client, setclient] = useState("");
   const [commencement, setcommencement] = useState("");
   const [completion, setcompletion] = useState("");
@@ -16,6 +17,9 @@ function Form() {
     setcommencement("");
     setcompletion("");
     setrfq("")
+    setTimeout(() => {
+      setIsOverlayVisible(!isOverlayVisible)
+    }, 700);
   };
 
   return (
@@ -25,9 +29,11 @@ function Form() {
           <div className="labeplusinput">
           <label>Client</label>
           <br/>
-          <select value={client} onChange={(e)=>{
-            setclient(e.target.value)
+          {/* <input  className="inp" placeholder="Client" value={client}></input> */}
+          <select value={client} className="inp" onChange={(e)=>{
+            setclient(e.target.value) 
           }}>
+          <option hidden>Client</option>
           <option value="Client A">Client A</option>
           <option value="Client B">Client B</option>
           <option value="Client C">Client C</option>
@@ -38,8 +44,8 @@ function Form() {
           <label>Date of Commencement</label>
           <br/>
           <input
-            type="date"
-            required
+            type="text"
+            placeholder="DD/MM/YYY"
             className="inp"
             value={commencement}
             onChange={(e) => setcommencement(e.target.value)}
@@ -50,8 +56,8 @@ function Form() {
           <label>Date of Completion</label>
           <br/>
           <input
-            type="date"
-            required
+            type="text"
+            placeholder="DD/MM/YYY"
             className="inp"
             value={completion}
             onChange={(e) => setcompletion(e.target.value)}
@@ -63,7 +69,6 @@ function Form() {
           <br/>
           <input
             type="text"
-            required
             placeholder="RFQ Code"
             className="inp" 
             value={rfq}
