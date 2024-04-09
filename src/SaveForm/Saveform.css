@@ -1,0 +1,45 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: form 3s linear ease;
+  }
+  
+  .overlay.visible {
+    display: flex;
+    animation: form 3s linear ease;
+  }
+  
+  .overlay-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30vw;
+    height: 100vh;
+    position:fixed;
+    right: 0;
+    border-radius: 20px 0px 0px 20px;
+    animation: form 3s linear ease;
+  }
+  @keyframes form{
+    0%{
+     width: 0;
+     background-color: brown;
+    }
+    100%{
+      width: 30vw;
+      background-color: rgb(4, 14, 219);
+    }
+  }
+
+  .saveTopbar{
+    display: flex;
+    justify-content: space-between;
+  }
+  

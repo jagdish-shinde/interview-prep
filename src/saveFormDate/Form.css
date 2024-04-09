@@ -1,0 +1,28 @@
+  label{
+    font-size: 0.8rem;
+  }
+  .inp{
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    border: 0.3px solid gray;
+    
+  }
+  .doneBtn{
+    width: 50%;
+    height: 40px;
+    background-color: var(--btn-color);
+    color:white;
+    border: none;
+     border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgb(127,206,207);
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+  }
+  .doneBtn:hover{
+    background-color: var(--btn-color-hover);
+  }
+  
