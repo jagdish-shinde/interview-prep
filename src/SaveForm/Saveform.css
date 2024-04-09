@@ -4,16 +4,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.1); /* For semi-transparent */
     display: none;
     justify-content: center;
     align-items: center;
-    animation: form 3s linear ease;
+    z-index: 1000;
   }
   
   .overlay.visible {
     display: flex;
-    animation: form 3s linear ease;
   }
   
   .overlay-content {
@@ -22,22 +21,22 @@
     border-radius: 5px;
     width: 30vw;
     height: 100vh;
-    position:fixed;
+    position: fixed;
     right: 0;
     border-radius: 20px 0px 0px 20px;
-    animation: form 3s linear ease;
+    animation: slideFromRight 0.5s forwards;
+    /* z-index: 1000; */
   }
-  @keyframes form{
-    0%{
-     width: 0;
-     background-color: brown;
+  
+  @keyframes slideFromRight {
+    from {
+      right: -100%;
     }
-    100%{
-      width: 30vw;
-      background-color: rgb(4, 14, 219);
+  
+    to {
+      right: 0;
     }
   }
-
   .saveTopbar{
     display: flex;
     justify-content: space-between;
