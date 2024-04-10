@@ -12,9 +12,4 @@
     display: grid;
     grid-template-columns: 37% 31% 28% 3% ; 
 }
-.sqft{
-    margin:0;
-    font-weight: 100;
-    font-style: italic;
-}
 

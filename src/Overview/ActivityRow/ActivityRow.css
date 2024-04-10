@@ -1,11 +1,11 @@
 .acitivityRow{
-    width: 90vw;
+    width: 89vw;
     display: grid;
-    grid-template-columns: 35% 31% 29% 1fr ; 
+    grid-template-columns: 35% 32% 29% 1fr ; 
 }
 .acitivityLayer{
-    width: 90vw;
+    width: 89vw;
     height: auto;
-    margin: 10px 0px 30px 50px 
+    margin: 10px 0px 30px 50px ;
 }
 

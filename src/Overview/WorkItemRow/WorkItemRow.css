@@ -1,7 +1,7 @@
 .workItemRow{
     display: flex;
-    gap: 45vw;
-    width: 84vw;
+    gap: 45.5vw;
+    width: 64vw;
     margin-top: 30px;
     margin-left: 80px;
 }

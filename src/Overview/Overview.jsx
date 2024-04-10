@@ -15,7 +15,7 @@ function Overview() {
         <span className='font-semibold'>Packages</span>
       </div>
       <div>
-        <span className='font-semibold'>Rate <span className="sqft">(in sqft)</span></span>
+        <span className='font-semibold'>Rate <em className="sqft">(in sqft)</em></span>
       </div>
       <div>
         <span className='font-semibold'>Total</span>

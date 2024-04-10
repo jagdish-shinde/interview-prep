@@ -13,7 +13,7 @@ function ActivityRow({data,civilChecked}) {
     setAcitivityChecked(civilChecked);
 }, [civilChecked]);
 
-   function handlePlusIcon(){
+   function handleExpand(){
     setexpandActivity(!expandActivity);
    }
   return (
@@ -30,9 +30,9 @@ function ActivityRow({data,civilChecked}) {
         <span className='font-semibold'>{data.Total}</span>
       </div>
       {expandActivity?(
-                   <FontAwesomeIcon icon={faChevronUp} onClick={handlePlusIcon} />
+                   <FontAwesomeIcon icon={faChevronUp} onClick={handleExpand} />
                 ) : (
-                  <FontAwesomeIcon icon={faChevronDown} onClick={handlePlusIcon} />
+                  <FontAwesomeIcon icon={faChevronDown} onClick={handleExpand} />
                 )}
     </div>
     {expandActivity && data.workItemArr.map((workItem,index)=>(
