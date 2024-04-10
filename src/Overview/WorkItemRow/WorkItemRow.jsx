@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import "./WorkItemRow.css"
 
 function WorkItemRow({data,activityChecked}) {

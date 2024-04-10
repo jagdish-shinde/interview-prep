@@ -14,7 +14,7 @@ const StyledTabs = styled((props) => (
   />
 ))({
   borderBottom: '0.3px solid grey',
-  maxWidth:400,
+  maxWidth:600,
   '& .MuiTabs-indicator': {
     display: 'flex',
     justifyContent: 'center',
@@ -31,7 +31,7 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
     textTransform: 'none',
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: theme.typography.pxToRem(15),
-    marginRight: theme.spacing(20),
+    marginRight: theme.spacing(40),
     color: 'grey',
     '&.Mui-selected': {
       color: 'black',
@@ -47,7 +47,7 @@ export default function CustomizedTabs() {
     // console.log(newValue);
     setValue(newValue);
     if(newValue===1){
-      console.log("Hello World");
+      console.log("Hello World !");
     }
   };
 

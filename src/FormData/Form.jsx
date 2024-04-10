@@ -1,5 +1,5 @@
 import "../FormData/Form.css"
-
+import {toast} from 'react-hot-toast';
 import { useState} from "react";
 
 function Form({setIsOverlayVisible,isOverlayVisible}) {
@@ -9,10 +9,10 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
   const [rfq, setRfq] = useState("");
   const handleClicker = (e) => {
     e.preventDefault();
-    if(!handleDataFormat(commencement) || !handleDataFormat(completion)){
+    if(!handleDataFormat(commencement) && !handleDataFormat(completion)){
       setCommencement("");
       setCompletion("")
-      alert("Enter Valid Data");
+      toast.error("Enter valid date")
       return;
     }
     console.log(client);
@@ -23,13 +23,14 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
     setCommencement("");
     setCompletion("");
     setRfq("")
+    toast.success("Saved");
     setTimeout(() => {
       setIsOverlayVisible(!isOverlayVisible)
     }, 500);
   };
 
   function handleDataFormat(date){
-    const regexddmmyyyy = /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/;
+    const regexddmmyyyy = /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/;
     if (regexddmmyyyy.test(date)) {
       return true;
     } 
