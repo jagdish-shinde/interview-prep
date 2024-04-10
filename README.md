@@ -42,7 +42,5 @@ npm start
 ## Contact
 For any inquiries or support, please contact me Aditya Jindal at [adityajindal2305@gmail.com].
 
-## License
-This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ---
