@@ -17,6 +17,7 @@
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px var(--btn-color);
   cursor: pointer;
+  z-index: 5;
 }
 .saveBtn:hover{
   background-color: var(--btn-color-hover);
