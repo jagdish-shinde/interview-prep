@@ -23,14 +23,11 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
   };
 
   return (
-      <div className="main">
+      <div>
         <form onSubmit={handleClicker}>
-        <br/>
-          <div className="labeplusinput">
+          <div className="labelPlusInput">
           <label>Client</label>
-          <br/>
-          {/* <input  className="inp" placeholder="Client" value={client}></input> */}
-          <select value={client} className="inp" onChange={(e)=>{
+          <select value={client} className="inputBox" onChange={(e)=>{
             setclient(e.target.value) 
           }}>
           <option hidden>Client</option>
@@ -39,38 +36,34 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
           <option value="Client C">Client C</option>
           </select>
           </div>
-          <br/>
-          <div className="labeplusinput">
+          <div className="labelPlusInput">
           <label>Date of Commencement</label>
-          <br/>
           <input
             type="text"
             placeholder="DD/MM/YYY"
-            className="inp"
+            pattern="\d{2}/\d{2}/\d{4}"
+            className="inputBox"
             value={commencement}
             onChange={(e) => setcommencement(e.target.value)}
           />
           </div>
-          <br/>
-          <div className="labeplusinput">
+          <div className="labelPlusInput">
           <label>Date of Completion</label>
-          <br/>
           <input
             type="text"
             placeholder="DD/MM/YYY"
-            className="inp"
+            pattern="\d{2}/\d{2}/\d{4}"
+            className="inputBox"
             value={completion}
             onChange={(e) => setcompletion(e.target.value)}
           />
           </div>
-          <br/>
-          <div className="labeplusinput">
+          <div className="labelPlusInput">
           <label>RFQ Code</label>
-          <br/>
           <input
             type="text"
             placeholder="RFQ Code"
-            className="inp" 
+            className="inputBox" 
             value={rfq}
             onChange={(e) => setrfq(e.target.value)}
           />

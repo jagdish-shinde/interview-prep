@@ -1,13 +1,16 @@
   label{
     font-size: 0.8rem;
   }
-  .inp{
+  .inputBox{
     border-radius: 10px;
     height: 40px;
     width: 100%;
     padding-left: 10px;
     border: 0.3px solid gray;
-    
+    margin-top: 10px;
+  }
+  .labelPlusInput{
+    margin: 20px 0px 0px 10px
   }
   .doneBtn{
     width: 50%;
@@ -25,4 +28,3 @@
   .doneBtn:hover{
     background-color: var(--btn-color-hover);
   }
-  

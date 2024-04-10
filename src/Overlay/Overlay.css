@@ -26,6 +26,9 @@
     border-radius: 20px 0px 0px 20px;
     animation: slideFromRight 0.5s forwards;
   }
+  .overlay-off{
+    animation: slideFromLeft 5s forwards ;
+  }
   
   @keyframes slideFromRight {
     from {
@@ -36,8 +39,20 @@
       right: 0;
     }
   }
-  .saveTopbar{
+  @keyframes slideFromLeft {
+    from {
+      right: 0;
+    }
+    to {
+      right: -100%;
+    }
+  }
+  
+  .formTopbar{
     display: flex;
     justify-content: space-between;
   }
   
+
+
+

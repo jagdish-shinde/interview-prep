@@ -13,7 +13,7 @@ const StyledTabs = styled((props) => (
     TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
   />
 ))({
-  borderBottom: '1px solid grey',
+  borderBottom: '0.3px solid grey',
   maxWidth:400,
   '& .MuiTabs-indicator': {
     display: 'flex',
@@ -44,14 +44,16 @@ export default function CustomizedTabs() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    console.log(event);
-    console.log(newValue);
+    // console.log(newValue);
     setValue(newValue);
+    if(newValue===1){
+      console.log("Hello World");
+    }
   };
 
   return (
     <>
-      <Box sx={{mx:15}}>
+      <Box sx={{mx:5}}>
         <StyledTabs
           value={value}
           onChange={handleChange}

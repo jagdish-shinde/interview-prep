@@ -1,7 +1,7 @@
 :root {
   --btn-color:rgb(127,206,207);
   --btn-color-hover: rgb(108,188,188);
-  --random: red
+  --table-head-bgc: rgb(224,233,249);
 }
 .topBar{
   display: flex;
@@ -27,4 +27,11 @@
   background-color: var(--btn-color-hover);
 }
 
+svg:hover{
+  cursor: pointer;
+}
 
+
+.printHello{
+  margin: 50px;
+}
