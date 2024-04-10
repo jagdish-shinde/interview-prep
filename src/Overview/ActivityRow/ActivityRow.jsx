@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./ActivityRow.css"
 import WorkItemRow from '../WorkItemRow/WorkItemRow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus ,faMinus} from '@fortawesome/free-solid-svg-icons'; 
 
-function ActivityRow({data}) {
-   const[ischecked,setChecked] = useState(false);
+function ActivityRow({data,civilChecked}) {
+   const[activityChecked,setAcitivityChecked] = useState(civilChecked || false);
+
    const [expandActivity,setexpandActivity] = useState(false)
-   console.log(ischecked);
+   
+   useEffect(() => {
+    setAcitivityChecked(civilChecked);
+}, [civilChecked]);
+
    function handlePlusIcon(){
     setexpandActivity(!expandActivity);
    }
@@ -15,7 +20,7 @@ function ActivityRow({data}) {
     <div className='acitivityLayer'>
     <div className='acitivityRow'>
       <div>
-        <input type="checkbox" checked={ischecked} onChange={()=>{setChecked(!ischecked)}}/>
+        <input type="checkbox" checked={activityChecked} onChange={()=>{setAcitivityChecked(!activityChecked)}}/>
         <span className='font-semibold'>{data.Activity}</span>
       </div>
       <div>
@@ -26,8 +31,8 @@ function ActivityRow({data}) {
       </div>
       {expandActivity?<FontAwesomeIcon icon={faMinus} size="xl" style={{color: "#63E6BE",}} onClick={handlePlusIcon} />: <FontAwesomeIcon icon={faPlus} size='xl' style={{color: "#63E6BE",}} onClick={handlePlusIcon}/>}
     </div>
-    {data.workItemArr.map((workItem,index)=>(
-        <WorkItemRow key={index} data = {workItem}/>
+    {expandActivity && data.workItemArr.map((workItem,index)=>(
+        <WorkItemRow key={index} data ={workItem} activityChecked={activityChecked}/>
     ))}
     </div>
   )

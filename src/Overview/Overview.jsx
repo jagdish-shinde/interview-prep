@@ -4,13 +4,13 @@ import React, { useState } from 'react'
 import {tabularData} from "../Overview/data"
 
 function Overview() {
-  const [checked, setChecked] = useState(false);
+  const [packageChecked, setPackageChecked] = useState(false);
   return (
     <div className="overviewLayer">
     <div className='tableHeader'>
       <div>
-        <input type="checkbox" onChange={(e)=>{
-          setChecked(e.target.checked);
+        <input type="checkbox" checked={packageChecked} onChange={(e)=>{
+          setPackageChecked(e.target.checked);
         }} />
         <span className='font-semibold'>Packages</span>
       </div>
@@ -23,7 +23,7 @@ function Overview() {
       <div></div> 
     </div>
     {tabularData.map((data,index)=>(
-      <Row key={index} data={data}/>
+      <Row key={index} data={data} packageChecked={packageChecked}/>
     ))}
     </div>
   )
