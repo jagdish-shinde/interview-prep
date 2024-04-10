@@ -3,24 +3,38 @@ import "../FormData/Form.css"
 import { useState} from "react";
 
 function Form({setIsOverlayVisible,isOverlayVisible}) {
-  const [client, setclient] = useState("");
-  const [commencement, setcommencement] = useState("");
-  const [completion, setcompletion] = useState("");
-  const [rfq, setrfq] = useState("");
+  const [client, setClient] = useState("");
+  const [commencement, setCommencement] = useState("");
+  const [completion, setCompletion] = useState("");
+  const [rfq, setRfq] = useState("");
   const handleClicker = (e) => {
     e.preventDefault();
+    if(!handleDataFormat(commencement) || !handleDataFormat(completion)){
+      setCommencement("");
+      setCompletion("")
+      alert("Enter Valid Data");
+      return;
+    }
     console.log(client);
     console.log(commencement);
     console.log(completion);
     console.log(rfq);
-    setclient("");
-    setcommencement("");
-    setcompletion("");
-    setrfq("")
+    setClient("");
+    setCommencement("");
+    setCompletion("");
+    setRfq("")
     setTimeout(() => {
       setIsOverlayVisible(!isOverlayVisible)
-    }, 700);
+    }, 500);
   };
+
+  function handleDataFormat(date){
+    const regexddmmyyyy = /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/;
+    if (regexddmmyyyy.test(date)) {
+      return true;
+    } 
+    return false;
+  }
 
   return (
       <div>
@@ -28,7 +42,7 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
           <div className="labelPlusInput">
           <label>Client</label>
           <select value={client} className="inputBox" onChange={(e)=>{
-            setclient(e.target.value) 
+            setClient(e.target.value) 
           }}>
           <option hidden>Client</option>
           <option value="Client A">Client A</option>
@@ -44,7 +58,7 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
             pattern="\d{2}/\d{2}/\d{4}"
             className="inputBox"
             value={commencement}
-            onChange={(e) => setcommencement(e.target.value)}
+            onChange={(e) => setCommencement(e.target.value)}
           />
           </div>
           <div className="labelPlusInput">
@@ -55,7 +69,7 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
             pattern="\d{2}/\d{2}/\d{4}"
             className="inputBox"
             value={completion}
-            onChange={(e) => setcompletion(e.target.value)}
+            onChange={(e) => setCompletion(e.target.value)}
           />
           </div>
           <div className="labelPlusInput">
@@ -65,7 +79,7 @@ function Form({setIsOverlayVisible,isOverlayVisible}) {
             placeholder="RFQ Code"
             className="inputBox" 
             value={rfq}
-            onChange={(e) => setrfq(e.target.value)}
+            onChange={(e) => setRfq(e.target.value)}
           />
           </div>
           <button className="doneBtn">Done</button>

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "./ActivityRow.css"
 import WorkItemRow from '../WorkItemRow/WorkItemRow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus ,faMinus} from '@fortawesome/free-solid-svg-icons'; 
+import { faChevronUp,faChevronDown} from '@fortawesome/free-solid-svg-icons'; 
 
 function ActivityRow({data,civilChecked}) {
    const[activityChecked,setAcitivityChecked] = useState(civilChecked || false);
 
    const [expandActivity,setexpandActivity] = useState(false)
-   
+
    useEffect(() => {
     setAcitivityChecked(civilChecked);
 }, [civilChecked]);
@@ -29,7 +29,11 @@ function ActivityRow({data,civilChecked}) {
       <div>
         <span className='font-semibold'>{data.Total}</span>
       </div>
-      {expandActivity?<FontAwesomeIcon icon={faMinus} size="xl" style={{color: "#63E6BE",}} onClick={handlePlusIcon} />: <FontAwesomeIcon icon={faPlus} size='xl' style={{color: "#63E6BE",}} onClick={handlePlusIcon}/>}
+      {expandActivity?(
+                   <FontAwesomeIcon icon={faChevronUp} onClick={handlePlusIcon} />
+                ) : (
+                  <FontAwesomeIcon icon={faChevronDown} onClick={handlePlusIcon} />
+                )}
     </div>
     {expandActivity && data.workItemArr.map((workItem,index)=>(
         <WorkItemRow key={index} data ={workItem} activityChecked={activityChecked}/>

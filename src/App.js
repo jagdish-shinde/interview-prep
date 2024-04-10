@@ -3,10 +3,8 @@ import Overlay from "../src/Overlay/Overlay";
 import "./App.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
 import { useState} from "react";
-
-
 
 
 function App() {
@@ -16,7 +14,7 @@ function App() {
     <>
       <div className="topBar">
         <div>
-          <FontAwesomeIcon icon={faArrowLeft} className="my-1" />
+          <FontAwesomeIcon icon={faChevronLeft} className="cursor-pointer ..."/>
           <span className="font-bold text-2xl mx-3">Create Workorder</span>
         </div>
         <button
