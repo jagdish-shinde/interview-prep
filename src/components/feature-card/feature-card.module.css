@@ -1,0 +1,28 @@
+.card{
+    height: 177px;
+    width: 177px;
+    text-align: center;
+    background-color: yellowgreen;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+.card:hover{
+    transition: transform .7s ease-out;
+    transform: scale(1.1);
+}
+.wrapper{
+    position: relative;
+}
+.btnStyle{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    color: black !important;
+}

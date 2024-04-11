@@ -1,0 +1,38 @@
+.secStyle{
+    background-color: #796eff;
+    padding: 40px 200px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    box-sizing: border-box;
+    position: relative;
+}
+.cards{
+    display: flex;
+    gap: 30px;
+}
+
+.cards > :nth-child(2){
+    /* margin-top: -70px; */
+}
+.info {
+    color: white;
+
+
+}
+.info > h6 {
+    font-size: 45px;
+    margin: 0;
+}
+.leftPic {
+    position: absolute;
+    left: 0;
+    /* top: 0; */
+    /* bottom: 0; */
+    height: 100%;
+}
+.rightPic {
+    position: absolute;
+    right: 0;
+    height: 100%;
+}

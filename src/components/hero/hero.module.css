@@ -1,0 +1,83 @@
+.secStyle{
+    /* padding: 0 210px; */
+    /* border: 1px solid red; */
+    display: flex;
+}
+.secStyle > div {
+    flex: 1;
+
+}
+.leftSec {
+    /* border:1px solid blue; */
+    padding: 40px 0;
+    padding-left: 210px;
+
+}
+.rightSec {
+    background-color: #fbfaf3;
+    padding-right: 210px;
+    position: relative;
+
+}
+.leftSec p{
+    margin: 0;
+    font-size: 60px;
+    font-weight: 500;
+}
+.switchWrapper{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.contentWrap{
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+.empty {
+    flex: 0.5;
+    border-top: 1px solid;
+}
+.containt{
+    flex: 1;
+    padding-right: 170px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+.container > p{
+    font-size: 30px;
+
+}
+.btnStyle{
+    background-color: #f0b504;
+    width: fit-content;
+    padding: 0 10px;
+    border-radius: 7px;
+    color: black;
+
+}
+.usersWrap{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-top: 30px;
+    gap: 100px;
+}
+.growthInfo > p{
+    font-size: 20px;
+}
+.shapeOne{
+    position: absolute;
+    left: 200px;
+    top: 130px;
+
+}
+.shapeTwo{
+    position: absolute;
+    left: 320px;
+    top: 100px;
+}

@@ -1,0 +1,12 @@
+.button {
+    background-color:#fcbe0c;
+    color: white;
+    /* filter: drop-shadow(0 0 5px #fcbe0c); */
+    outline: none;
+    border: none;
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
