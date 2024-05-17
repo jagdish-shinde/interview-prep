@@ -1,0 +1,13 @@
+.secStyle{
+    width: 65%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100vh;
+    padding-top: 3rem;
+    gap: 2rem;
+}
+.secStyle > p {
+    padding-top: 5rem;
+}
